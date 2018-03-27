@@ -4,7 +4,7 @@ $('#tempo-digitacao').text(tempo);
 let campoD = $('.campo-digitacao');
 
 //onReady - carrega a tela e só dai executa a função
-$('document').ready(() => {
+$(() => {
     atualizaTamanhoFrase();
     inicializaContadores();
     inicializaCronometro();
