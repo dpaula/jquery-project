@@ -12,12 +12,16 @@ numeroPalavras.text(qtdPalavras);
 let campoD = $('.campo-digitacao');
 //para setar o evento com jquery, basta usar o metodo on
 //passando o primeiro parametro qual sera o evento, e o segundo a função que sera executada
-campoD.on('click', () => {
+campoD.on('input', () => {
     //para pegar valor de um textArea, ao inves de .value(), no jquery é usado o .val()
     //a diferença em CAMPO.text() para CAMPO.val() é que text é o texto entre tags 
     //e o value() é o que está dentro de caixas de input
     let textoCampoArea = campoD.val();
-    let qtdPalavrasTA = textoCampoArea.split(' ').length;
+    let qtdPalavrasTA = textoCampoArea.split(/\S+/).length -1;
     $('#contador-palavras').text(qtdPalavrasTA);
+
+
+    let qtdCaracteres = textoCampoArea.length;
+    $('#contador-caracteres').text(qtdCaracteres);
 });
 
